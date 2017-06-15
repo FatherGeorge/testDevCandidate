@@ -5,6 +5,8 @@
 <head>
     <title>Interface</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+
+    <script src="js/myFunctions.js"></script>
 </head>
 <body>
 
@@ -12,7 +14,7 @@
     <fmt:setLocale value="en_US"/>
     <h2>Example of interface</h2>
 
-    <form action="/home.htm" method="post">
+    <form id="form1">
         <table class="table">
             <thead>Filter</thead>
             <tbody>
@@ -42,14 +44,14 @@
                 </tr>
             </tbody>
         </table>
-        <input type="submit" value="Filter">
+        <input type="button" id="submitButton" value="Filter">
     </form>
 
     <br />
 
-    <table class="table">
+    <table id="partsList" class="table" onload="displayParts()">
         <thead>
-            <th><a href="home.htm">PN</a></th>
+            <th><button class="btn btn-primary" type="button" onclick="sendAjax()">PN</button></th>
             <th>Part Name</th>
             <th>Vendor</th>
             <th>Qty</th>
@@ -69,6 +71,7 @@
         </c:forEach>
         </tbody>  --%>
     </table>
+
 </div>
 
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
