@@ -6,6 +6,8 @@
     <title>Interface</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+
     <script src="js/myFunctions.js"></script>
 </head>
 <body>
@@ -49,15 +51,16 @@
 
     <br />
 
-    <table id="partsList" class="table" onload="displayParts()">
+    <table id="partsList" class="table">
         <thead>
-            <th><button class="btn btn-primary" type="button" onclick="sendAjax()">PN</button></th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts()">PN</button></th>
             <th>Part Name</th>
             <th>Vendor</th>
             <th>Qty</th>
             <th>Shipped</th>
             <th>Received</th>
         </thead>
+        <script>displayParts()</script>
 <%--        <tbody>
         <c:forEach items="${someParts}" var="part">
             <tr>
@@ -74,7 +77,6 @@
 
 </div>
 
-<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>

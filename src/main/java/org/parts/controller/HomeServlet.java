@@ -1,5 +1,6 @@
 package org.parts.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.parts.service.PartsService;
 import org.parts.service.PartsServiceImpl;
 
@@ -16,8 +17,19 @@ public class HomeServlet extends HttpServlet {
     private PartsService service = new PartsServiceImpl();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("someParts", service.getAllParts());
         request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //request.setAttribute("someParts", service.getAllParts());
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        response.setContentType("application/json");
+
+        mapper.writeValue(response.getOutputStream(), service.getAllParts());
+
+        //request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
 
     }
 }
