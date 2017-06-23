@@ -22,45 +22,45 @@
             <tbody>
                 <tr>
                     <td>PN</td>
-                    <td><input type="number" name="PN"></td>
+                    <td><input type="number" id="pn" name="pn"></td>
                 </tr>
                 <tr>
                     <td>Part Name</td>
-                    <td><input type="text" name="partName"></td>
+                    <td><input type="text" id="partName" name="partName"></td>
                 </tr>
                 <tr>
                     <td>Vendor</td>
-                    <td><input type="text" name="vendor"></td>
+                    <td><input type="text" in="vandor" name="vendor"></td>
                 </tr>
                 <tr>
                     <td>Qty</td>
-                    <td><input type="text" name="qty"></td>
+                    <td><input type="text" id="qty" name="qty"></td>
                 </tr>
                 <tr>
                     <td>Shipped</td>
-                    <td><input type="date" name="shippedAfter">&nbsp;<input type="date" name="shippedBefore"></td>
+                    <td><input type="date" id="shippedAfter" name="shippedAfter">&nbsp;<input type="date" id="shippedBefore" name="shippedBefore"></td>
                 </tr>
                 <tr>
                     <td>Received</td>
-                    <td><input type="date" name="receivedAfter">&nbsp;<input type="date" name="receivedBefore"></td>
+                    <td><input type="date" id="receivedAfter" name="receivedAfter">&nbsp;<input type="date" id="receivedBefore" name="receivedBefore"></td>
                 </tr>
             </tbody>
         </table>
-        <input type="button" id="submitButton" value="Filter">
+        <input type="button" value="Filter" onclick="displayParts(true, false)">
     </form>
 
     <br />
 
     <table id="partsList" class="table">
         <thead>
-            <th><button class="btn btn-primary" type="button" onclick="displayParts()">PN</button></th>
-            <th>Part Name</th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'pn')">PN</button></th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'partName')">Part Name</button></th>
             <th>Vendor</th>
             <th>Qty</th>
             <th>Shipped</th>
             <th>Received</th>
         </thead>
-        <script>displayParts()</script>
+        <script>displayParts(false, false)</script>
 <%--        <tbody>
         <c:forEach items="${someParts}" var="part">
             <tr>

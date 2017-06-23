@@ -1,27 +1,39 @@
 package org.parts.service;
 
+import org.parts.dao.PartsDAO;
+import org.parts.dao.PartsDAOImpl;
 import org.parts.model.Part;
+import org.parts.service.fg.SortService;
 
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by FRIEND on 07.06.2017.
- */
 public class PartsServiceImpl implements PartsService {
-    private List<Part> parts = new ArrayList<>();
+    private PartsDAO dao = new PartsDAOImpl();
 
-    {
-        parts.add(new Part("10", "Flame thrower" ,"factory", 10, new GregorianCalendar(2017, 4, 7).getTime(), new GregorianCalendar(2017, 5, 7).getTime()));
-        parts.add(new Part("50", "Rocket launcher" ,"factory", 10, new GregorianCalendar(2017, 4, 7).getTime(), new GregorianCalendar(2017, 5, 7).getTime()));
-        parts.add(new Part("60", "Gas splitter" ,"factory", 10, new GregorianCalendar(2017, 4, 7).getTime(), new GregorianCalendar(2017, 5, 7).getTime()));
+    private List<Part> filteredParts;
+    private SortService sortService = new SortService();
+
+    public List<Part> getAllParts() {
+        return dao.getAllParts();
     }
 
     @Override
-    public List<Part> getAllParts() {
-        return parts;
+    public List<Part> getArrangedParts(Dto dto) {
+        if (dto.isFiltered()) {
+            filteredParts = applyFilter(dto);
+            return filteredParts;
+        } else if (dto.isSorted()) {
+            return sortService.applySort(filteredParts, dto.getSortField());
+        }
+
+        filteredParts = getAllParts();
+        return filteredParts;
     }
 
-
+    private List<Part> applyFilter(Dto dto) {
+        dao.getAllParts();
+        return null;
+    }
 }
