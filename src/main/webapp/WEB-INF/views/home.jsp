@@ -22,7 +22,7 @@
             <tbody>
                 <tr>
                     <td>PN</td>
-                    <td><input type="number" id="pn" name="pn"></td>
+                    <td><input type="text" id="pn" name="pn"></td>
                 </tr>
                 <tr>
                     <td>Part Name</td>
@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <td>Vendor</td>
-                    <td><input type="text" in="vandor" name="vendor"></td>
+                    <td><input type="text" id="vendor" name="vendor"></td>
                 </tr>
                 <tr>
                     <td>Qty</td>
@@ -46,7 +46,7 @@
                 </tr>
             </tbody>
         </table>
-        <input type="button" value="Filter" onclick="displayParts(true, false)">
+        <input type="button" value="Filter" onclick="displayParts(true, false, null)">
     </form>
 
     <br />
@@ -60,7 +60,7 @@
             <th>Shipped</th>
             <th>Received</th>
         </thead>
-        <script>displayParts(false, false)</script>
+        <script>displayParts(false, false, null)</script>
 <%--        <tbody>
         <c:forEach items="${someParts}" var="part">
             <tr>

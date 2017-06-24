@@ -28,7 +28,7 @@ public class HomeServlet extends HttpServlet {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
         String json = "";
-        if (reader.ready()) {
+        if (reader != null) {
             json = reader.readLine();
         }
 
