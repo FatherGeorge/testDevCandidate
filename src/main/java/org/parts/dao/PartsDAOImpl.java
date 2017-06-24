@@ -17,6 +17,6 @@ public class PartsDAOImpl implements PartsDAO {
 
     @Override
     public List<Part> getAllParts() {
-        return null;
+        return parts;
     }
 }

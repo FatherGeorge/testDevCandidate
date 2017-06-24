@@ -39,6 +39,7 @@ public class HomeServlet extends HttpServlet {
         response.setContentType("application/json");
         mapper.writeValue(response.getOutputStream(), service.getArrangedParts(dto));
 
+        //response.getWriter().write(json);
         //request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
 
     }

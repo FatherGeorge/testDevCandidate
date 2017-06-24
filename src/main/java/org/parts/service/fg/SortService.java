@@ -17,6 +17,6 @@ public class SortService {
 
                 break;
         }
-        return null;
+        return filteredParts;
     }
 }

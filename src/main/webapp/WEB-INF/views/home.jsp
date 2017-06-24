@@ -5,9 +5,9 @@
 <head>
     <title>Interface</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link href="css/myCss.css" rel="stylesheet">
 
     <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-
     <script src="js/myFunctions.js"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
     <fmt:setLocale value="en_US"/>
     <h2>Example of interface</h2>
 
-    <form id="form1">
+    <div class="wrapper">
         <table class="table">
             <thead>Filter</thead>
             <tbody>
@@ -46,8 +46,8 @@
                 </tr>
             </tbody>
         </table>
-        <input type="button" value="Filter" onclick="displayParts(true, false, null)">
-    </form>
+        <button class="btn btn-primary" type="button" onclick="displayParts(true, false, '')">Filter</button>
+    </div>
 
     <br />
 
@@ -60,7 +60,7 @@
             <th>Shipped</th>
             <th>Received</th>
         </thead>
-        <script>displayParts(false, false, null)</script>
+        <script>displayParts(false, false, "")</script>
 <%--        <tbody>
         <c:forEach items="${someParts}" var="part">
             <tr>
