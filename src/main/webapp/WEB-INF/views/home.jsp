@@ -53,7 +53,7 @@
 
     <table id="partsList" class="table">
         <thead>
-            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'pn')">PN</button></th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'partNumber')">PN</button></th>
             <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'partName')">Part Name</button></th>
             <th>Vendor</th>
             <th>Qty</th>
