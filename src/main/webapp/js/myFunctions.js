@@ -25,10 +25,20 @@ function displayParts(filtered, sorted, sortField) {
 
             $('#partsList tbody').remove();
 
+            var options = {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            }
+
             $.each(data, function (index, part) {
                 $("#partsList").append($('<tr/>')
                     .append($('<td/>').html(part.partNumber))
                     .append($('<td/>').html(part.partName))
+                    .append($('<td/>').html(part.vendor))
+                    .append($('<td/>').html(part.quantity))
+                    .append($('<td/>').html(new Date(part.shipped).toLocaleDateString("en-US", options)))
+                    .append($('<td/>').html(new Date(part.received).toLocaleDateString("en-US", options)))
                 );
             });
         },

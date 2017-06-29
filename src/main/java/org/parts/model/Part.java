@@ -9,7 +9,7 @@ public class Part {
     private String vendor;
     private Integer quantity;
     private Date shipped;
-    private Date receive;
+    private Date received;
 
     public Part(String partName) {
         this.partName = partName;
@@ -26,13 +26,13 @@ public class Part {
                 String vendor,
                 Integer quantity,
                 Date shipped,
-                Date receive) {
+                Date received) {
         this.partNumber = partNumber;
         this.partName = partName;
         this.vendor = vendor;
         this.quantity = quantity;
         this.shipped = shipped;
-        this.receive = receive;
+        this.received = received;
     }
 
     public String getPartNumber() {
@@ -55,8 +55,8 @@ public class Part {
         return shipped;
     }
 
-    public Date getReceive() {
-        return receive;
+    public Date getReceived() {
+        return received;
     }
 
     public void setPartNumber(String partNumber) {
@@ -79,7 +79,7 @@ public class Part {
         this.shipped = shipped;
     }
 
-    public void setReceive(Date receive) {
-        this.receive = receive;
+    public void setReceived(Date received) {
+        this.received = received;
     }
 }

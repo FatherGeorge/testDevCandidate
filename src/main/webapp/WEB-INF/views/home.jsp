@@ -55,10 +55,10 @@
         <thead>
             <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'partNumber')">PN</button></th>
             <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'partName')">Part Name</button></th>
-            <th>Vendor</th>
-            <th>Qty</th>
-            <th>Shipped</th>
-            <th>Received</th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'vendor')">Vendor</button></th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'quantity')">Qty</button></th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'shipped')">Shipped</button></th>
+            <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'received')">Received</button></th>
         </thead>
         <script>displayParts(false, false, "")</script>
 <%--        <tbody>
@@ -69,7 +69,7 @@
                 <td>${part.vendor}</td>
                 <td>${part.quantity}</td>
                 <td><fmt:formatDate value="${part.shipped}" pattern="MMM dd, yyyy"/></td>
-                <td><fmt:formatDate value="${part.receive}" pattern="MMM dd, yyyy"/></td>
+                <td><fmt:formatDate value="${part.received}" pattern="MMM dd, yyyy"/></td>
             </tr>
         </c:forEach>
         </tbody>  --%>
