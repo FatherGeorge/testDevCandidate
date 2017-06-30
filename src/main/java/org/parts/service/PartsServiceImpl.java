@@ -22,7 +22,7 @@ public class PartsServiceImpl implements PartsService {
     @Override
     public List<Part> getArrangedParts(Dto dto) {
         if (dto.isFiltered()) {
-            filteredParts = applyFilter(getAllParts(), dto);
+            filteredParts = applyFilter((ArrayList<Part>) getAllParts(), dto);
             return filteredParts;
         } else if (dto.isSorted()) {
             return sortService.applySort(filteredParts, dto.getSortField());
@@ -32,10 +32,10 @@ public class PartsServiceImpl implements PartsService {
         return filteredParts;
     }
 
-    private ArrayList<Part> applyFilter(List<Part> allParts, final Dto dto) {
+    private ArrayList<Part> applyFilter(ArrayList<Part> allParts, final Dto dto) {
 
         if (!"".equals(dto.getPartNumber())) {
-            filteredParts = filter(allParts, new Filter<Part>() {
+            filter(allParts, new Filter<Part>() {
                 @Override
                 public boolean shouldRemove(Part part) {
                     return !part.getPartNumber().contains(dto.getPartNumber());
@@ -43,7 +43,7 @@ public class PartsServiceImpl implements PartsService {
             });
         }
         if (!"".equals(dto.getPartName())) {
-            filteredParts = filter(allParts, new Filter<Part>() {
+            filter(allParts, new Filter<Part>() {
                 @Override
                 public boolean shouldRemove(Part part) {
                     return !part.getPartName().contains(dto.getPartName());
@@ -51,17 +51,17 @@ public class PartsServiceImpl implements PartsService {
             });
         }
         if (!"".equals(dto.getVendor())) {
-            filteredParts = filter(allParts, new Filter<Part>() {
+            filter(allParts, new Filter<Part>() {
                 @Override
                 public boolean shouldRemove(Part part) {
                     return !part.getVendor().contains(dto.getVendor());
                 }
             });
         }
-        return null;
+        return allParts;
     }
 
-    private ArrayList<Part> filter(List<Part> allParts, Filter<Part> filter) {
+    private void filter(List<Part> allParts, Filter<Part> filter) {
         Iterator<Part> partsIterator = allParts.iterator();
         while (partsIterator.hasNext()) {
             Part part = partsIterator.next();
@@ -69,7 +69,6 @@ public class PartsServiceImpl implements PartsService {
                 partsIterator.remove();
             }
         }
-        return filteredParts;
     }
 
 
