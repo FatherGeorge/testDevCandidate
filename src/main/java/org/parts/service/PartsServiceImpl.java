@@ -35,33 +35,73 @@ public class PartsServiceImpl implements PartsService {
     private ArrayList<Part> applyFilter(ArrayList<Part> allParts, final Dto dto) {
 
         if (!"".equals(dto.getPartNumber())) {
-            filter(allParts, new Filter<Part>() {
+            filterColumn(allParts, new Filter<Part>() {
                 @Override
                 public boolean shouldRemove(Part part) {
-                    return !part.getPartNumber().contains(dto.getPartNumber());
+                    return !part.getPartNumber().toLowerCase().contains(dto.getPartNumber().toLowerCase());
                 }
             });
         }
         if (!"".equals(dto.getPartName())) {
-            filter(allParts, new Filter<Part>() {
+            filterColumn(allParts, new Filter<Part>() {
                 @Override
                 public boolean shouldRemove(Part part) {
-                    return !part.getPartName().contains(dto.getPartName());
+                    return !part.getPartName().toLowerCase().contains(dto.getPartName().toLowerCase());
                 }
             });
         }
         if (!"".equals(dto.getVendor())) {
-            filter(allParts, new Filter<Part>() {
+            filterColumn(allParts, new Filter<Part>() {
                 @Override
                 public boolean shouldRemove(Part part) {
-                    return !part.getVendor().contains(dto.getVendor());
+                    return !part.getVendor().toLowerCase().contains(dto.getVendor().toLowerCase());
+                }
+            });
+        }
+        if (dto.getQty() != null) {
+            filterColumn(allParts, new Filter<Part>() {
+                @Override
+                public boolean shouldRemove(Part part) {
+                    return part.getQuantity() < dto.getQty();
+                }
+            });
+        }
+        if (dto.getShippedAfter() != null) {
+            filterColumn(allParts, new Filter<Part>() {
+                @Override
+                public boolean shouldRemove(Part part) {
+                    return part.getShipped().compareTo(dto.getShippedAfter()) < 0;
+                }
+            });
+        }
+        if (dto.getShippedBefore() != null) {
+            filterColumn(allParts, new Filter<Part>() {
+                @Override
+                public boolean shouldRemove(Part part) {
+                    return part.getShipped().compareTo(dto.getShippedBefore()) > 0;
+                }
+            });
+        }
+        if (dto.getReceivedAfter() != null) {
+            filterColumn(allParts, new Filter<Part>() {
+                @Override
+                public boolean shouldRemove(Part part) {
+                    return part.getReceived().compareTo(dto.getReceivedAfter()) < 0;
+                }
+            });
+        }
+        if (dto.getReceivedBefore() != null) {
+            filterColumn(allParts, new Filter<Part>() {
+                @Override
+                public boolean shouldRemove(Part part) {
+                    return part.getReceived().compareTo(dto.getReceivedBefore()) > 0;
                 }
             });
         }
         return allParts;
     }
 
-    private void filter(List<Part> allParts, Filter<Part> filter) {
+    private void filterColumn(List<Part> allParts, Filter<Part> filter) {
         Iterator<Part> partsIterator = allParts.iterator();
         while (partsIterator.hasNext()) {
             Part part = partsIterator.next();
