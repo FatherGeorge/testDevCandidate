@@ -3,6 +3,7 @@ package org.parts.dao;
 import org.parts.model.Part;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -17,6 +18,16 @@ public class PartsDAOImpl implements PartsDAO {
 
     @Override
     public List<Part> getAllParts() {
-        return parts;
+        List<Part> clonedParts = new ArrayList<>();
+        for(Part part : parts){
+            Part clonedPart = new Part(part.getPartNumber(),
+                                       part.getPartName(),
+                                       part.getVendor(),
+                                       new Integer(part.getQuantity()),
+                                       new Date(part.getShipped().getTime()),
+                                       new Date(part.getReceived().getTime()));
+            clonedParts.add(clonedPart);
+        }
+        return clonedParts;
     }
 }

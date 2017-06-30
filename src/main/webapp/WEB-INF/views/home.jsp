@@ -22,7 +22,7 @@
             <tbody>
                 <tr>
                     <td>PN</td>
-                    <td><input type="text" id="pn" name="pn"></td>
+                    <td><input type="text" id="partNumber" name="pn"></td>
                 </tr>
                 <tr>
                     <td>Part Name</td>

@@ -3,7 +3,7 @@ package org.parts.service;
 import java.util.Date;
 
 public class Dto {
-    private String pn;
+    private String partNumber;
     private String partName;
     private String vendor;
     private Integer qty;
@@ -19,8 +19,8 @@ public class Dto {
     public Dto() {
     }
 
-    public String getPn() {
-        return pn;
+    public String getPartNumber() {
+        return partNumber;
     }
 
     public String getPartName() {
@@ -55,8 +55,8 @@ public class Dto {
         return sortField;
     }
 
-    public void setPn(String pn) {
-        this.pn = pn;
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
     }
 
     public void setPartName(String partName) {

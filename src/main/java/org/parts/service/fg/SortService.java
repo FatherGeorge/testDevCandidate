@@ -26,7 +26,7 @@ public class SortService {
             comparator = new ComparatorForComparableImplementors(sortField, true);
         }
         Collections.sort(filteredParts, comparator);
-
+        
         lastSortField = sortField;
 
         return filteredParts;

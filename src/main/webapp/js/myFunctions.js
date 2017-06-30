@@ -1,7 +1,7 @@
 function displayParts(filtered, sorted, sortField) {
 
     var dto = new Object();
-    dto.pn = $('#pn').val();
+    dto.partNumber = $('#partNumber').val();
     dto.partName = $('#partName').val();
     dto.vendor = $('#vendor').val();
     dto.qty = $('#qty').val();
