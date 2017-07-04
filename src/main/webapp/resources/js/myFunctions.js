@@ -14,7 +14,7 @@ function displayParts(filtered, sorted, sortField) {
     dto.filtered = filtered;
 
     $.ajax({
-        url: "home.htm",
+        url: "/",
         type: 'POST',
         dataType: 'json',
         data: JSON.stringify(dto),

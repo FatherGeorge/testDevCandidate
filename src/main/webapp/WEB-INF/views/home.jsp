@@ -1,14 +1,14 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Interface</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
-    <link href="css/myCss.css" rel="stylesheet">
+    <link href="resources/css/myCss.css" rel="stylesheet">
 
     <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/myFunctions.js"></script>
+    <script src="resources/js/myFunctions.js"></script>
 </head>
 <body>
 

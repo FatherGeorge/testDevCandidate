@@ -1,7 +1,6 @@
 package org.parts.service;
 
 import org.parts.dao.PartsDAO;
-import org.parts.dao.PartsDAOImpl;
 import org.parts.model.Part;
 import org.parts.service.fg.SortService;
 import org.springframework.beans.factory.annotation.Autowired;
