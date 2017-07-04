@@ -1,12 +1,14 @@
 package org.parts.dao;
 
 import org.parts.model.Part;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+@Repository
 public class PartsDAOImpl implements PartsDAO {
     private List<Part> parts = new ArrayList<>();
 

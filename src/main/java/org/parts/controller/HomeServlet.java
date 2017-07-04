@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.parts.service.PartsService;
 import org.parts.service.PartsServiceImpl;
 import org.parts.service.Dto;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,8 @@ import java.io.InputStreamReader;
 @WebServlet(urlPatterns = "/home.htm")
 public class HomeServlet extends HttpServlet {
 
-    private PartsService service = new PartsServiceImpl();
+    @Autowired
+    private PartsService service;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);

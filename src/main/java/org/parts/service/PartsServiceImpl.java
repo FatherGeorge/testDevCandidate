@@ -4,13 +4,18 @@ import org.parts.dao.PartsDAO;
 import org.parts.dao.PartsDAOImpl;
 import org.parts.model.Part;
 import org.parts.service.fg.SortService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Service("partsStorageService")
 public class PartsServiceImpl implements PartsService {
-    private PartsDAO dao = new PartsDAOImpl();
+
+    @Autowired
+    private PartsDAO dao;
 
     private ArrayList<Part> filteredParts;
     private SortService sortService = new SortService();
