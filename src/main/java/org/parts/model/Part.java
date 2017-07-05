@@ -1,15 +1,27 @@
 package org.parts.model;
 
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "PARTS")
 public class Part {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "partNumber")
     private String partNumber;
+
     private String partName;
     private String vendor;
     private Integer quantity;
     private Date shipped;
     private Date received;
+
+    public Part() {
+    }
 
     public Part(String partName) {
         this.partName = partName;
@@ -33,6 +45,14 @@ public class Part {
         this.quantity = quantity;
         this.shipped = shipped;
         this.received = received;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getPartNumber() {
