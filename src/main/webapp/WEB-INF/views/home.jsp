@@ -61,18 +61,6 @@
             <th><button class="btn btn-primary" type="button" onclick="displayParts(false, true, 'received')">Received</button></th>
         </thead>
         <script>displayParts(false, false, "")</script>
-<%--        <tbody>
-        <c:forEach items="${someParts}" var="part">
-            <tr>
-                <td>${part.partNumber}</td>
-                <td>${part.partName}</td>
-                <td>${part.vendor}</td>
-                <td>${part.quantity}</td>
-                <td><fmt:formatDate value="${part.shipped}" pattern="MMM dd, yyyy"/></td>
-                <td><fmt:formatDate value="${part.received}" pattern="MMM dd, yyyy"/></td>
-            </tr>
-        </c:forEach>
-        </tbody>  --%>
     </table>
 
 </div>
