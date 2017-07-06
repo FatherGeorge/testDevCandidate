@@ -38,11 +38,11 @@
                 </tr>
                 <tr>
                     <td>Shipped</td>
-                    <td>after<input type="date" id="shippedAfter" name="shippedAfter">&nbsp;before<input type="date" id="shippedBefore" name="shippedBefore"></td>
+                    <td>after<input type="date" placeholder="YYYY-MM-DD" id="shippedAfter" name="shippedAfter">&nbsp;before<input type="date" id="shippedBefore" placeholder="YYYY-MM-DD" name="shippedBefore"></td>
                 </tr>
                 <tr>
                     <td>Received</td>
-                    <td>after<input type="date" id="receivedAfter" name="receivedAfter">&nbsp;before<input type="date" id="receivedBefore" name="receivedBefore"></td>
+                    <td>after<input type="date" placeholder="YYYY-MM-DD" id="receivedAfter" name="receivedAfter">&nbsp;before<input type="date" id="receivedBefore" placeholder="YYYY-MM-DD" name="receivedBefore"></td>
                 </tr>
             </tbody>
         </table>

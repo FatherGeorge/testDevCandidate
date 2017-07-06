@@ -6,7 +6,7 @@
     <persistence-unit name="developer.remarks.persistence.unit">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="hibernate.hbm2ddl.auto" value="create"/><!--validate, update, create-drop-->
+            <property name="hibernate.hbm2ddl.auto" value="validate"/><!--create, update, create-drop-->
         </properties>
     </persistence-unit>
 </persistence>

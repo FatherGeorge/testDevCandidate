@@ -37,6 +37,6 @@ public class PartsDAOImpl implements PartsDAO {
         }*/
         /*return clonedParts;*/
 
-        return em.createQuery("from Part", Part.class).getResultList();
+        return em.createQuery("from PARTS", Part.class).getResultList();
     }
 }
