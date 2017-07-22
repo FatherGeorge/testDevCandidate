@@ -42,7 +42,7 @@ in the /WEB-INF/views directory -->
     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           id="entityManagerFactory">
         <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"/>
-        <property name="persistenceUnitName" value="developer.remarks.persistence.unit"/>
+        <property name="persistenceUnitName" value="org.parts.persistence"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
         <property name="jpaDialect" ref="jpaDialect"/>

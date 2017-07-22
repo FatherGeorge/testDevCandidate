@@ -1,0 +1,7 @@
+sudo apt-add-repository ppa:pitti/postgresql
+sudo apt-get update
+sudo apt-get install postgresql
+
+sudo -u postgres psql
+
+psql -h localhost database_name user_name

@@ -5,15 +5,13 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "PARTS")
+//@Table(name = "parts")
 public class Part {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "partNumber")
     private String partNumber;
-
     private String partName;
     private String vendor;
     private Integer quantity;
